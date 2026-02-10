@@ -14,7 +14,10 @@
     </style>
 </head>
 <body>
-    <h1>Employee List</h1>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1>Employee List</h1>
+        <a href="employee-add.cfm" style="background: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">+ Add Employee</a>
+    </div>
     
     <table>
         <thead>
