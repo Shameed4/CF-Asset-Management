@@ -12,68 +12,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Employee</title>
-    <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 20px;
-            max-width: 600px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin-right: 10px;
-        }
-        .btn-primary {
-            background-color: #4CAF50;
-            color: white;
-        }
-        .btn-secondary {
-            background-color: #999;
-            color: white;
-        }
-    </style>
+    <title>Add Employee - AssetTracker</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>Add New Employee</h1>
-    
-    <form method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <div class="nav">
+        <a href="/">Dashboard</a>
+        <a href="/employee/list.cfm">Employees</a>
+        <a href="/asset/list.cfm">Assets</a>
+    </div>
+
+    <div class="container">
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+            <div class="page-header">
+                <h1>Add New Employee</h1>
+            </div>
+            
+            <form method="post">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="e.g. John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" name="department" placeholder="e.g. Engineering" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john.doe@company.com" required>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <button type="submit" name="submit" class="btn btn-success">Create Employee</button>
+                    <a href="list.cfm" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
         </div>
-        
-        <div class="form-group">
-            <label for="department">Department:</label>
-            <input type="text" id="department" name="department" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        
-        <button type="submit" name="submit" class="btn btn-primary">Add Employee</button>
-        <a href="list.cfm" class="btn btn-secondary">Cancel</a>
-    </form>
+    </div>
 </body>
 </html>
