@@ -14,6 +14,11 @@
     </style>
 </head>
 <body>
+    <div style="margin-bottom: 20px; padding: 10px; background: #ecf0f1; border-radius: 4px;">
+        <a href="index.cfm" style="margin-right: 15px; text-decoration: none; color: #2c3e50; font-weight: bold;">Employees</a>
+        <a href="asset/list.cfm" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Assets</a>
+    </div>
+
     <div style="display: flex; justify-content: space-between; align-items: center;">
         <h1>Employee List</h1>
         <a href="employee/add.cfm" style="background: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">+ Add Employee</a>
