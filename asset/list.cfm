@@ -13,12 +13,17 @@
         <a href="/employee/list.cfm">Employees</a>
         <a href="/asset/list.cfm">Assets</a>
     </div>
+
     <div class="container">
         <div class="card">
             <div class="page-header">
                 <h1>Asset List</h1>
-                <a href="add.cfm" class="btn btn-success">+ Add Asset</a>
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" id="assetSearchBox" placeholder="Search assets..." style="padding: 8px; width: 200px;">
+                    <a href="add.cfm" class="btn btn-success">+ Add Asset</a>
+                </div>
             </div>
+
             <table>
                 <thead>
                     <tr>
@@ -31,7 +36,7 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="assetTableBody">
                     <cfoutput query="assets">
                         <tr>
                             <td>#asset_name#</td>
@@ -42,7 +47,7 @@
                             <td>$#numberFormat(cost, "9,999.99")#</td>
                             <td>
                                 <a href="edit.cfm?id=#id#" class="btn btn-primary btn-sm">Edit</a>
-                                <a href="delete.cfm?id=#id#" class="btn btn-danger btn-sm" onclick="return confirm('Delete?')">Delete</a>
+                                <a href="delete.cfm?id=#id#" class="btn btn-danger btn-sm" onclick="return confirm('Delete this asset?')">Delete</a>
                             </td>
                         </tr>
                     </cfoutput>
@@ -50,5 +55,41 @@
             </table>
         </div>
     </div>
+
+    <script>
+        const searchBox = document.getElementById('assetSearchBox');
+        const tbody = document.getElementById('assetTableBody');
+
+        searchBox.addEventListener('keyup', (e) => {
+            const query = e.target.value;
+
+            fetch(`/api/assets.cfm?q=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    tbody.innerHTML = ''; 
+
+                    if (data.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; color: #999;">No assets found</td></tr>';
+                    } else {
+                        data.forEach(asset => {
+                            const row = `
+                                <tr>
+                                    <td>${asset.name}</td>
+                                    <td>${asset.serial}</td>
+                                    <td>${asset.assigned_to}</td>
+                                    <td>-</td> <td>-</td> <td>$${parseFloat(asset.cost).toFixed(2)}</td>
+                                    <td>
+                                        <a href="edit.cfm?id=${asset.id}" class="btn btn-primary btn-sm">Edit</a>
+                                        <a href="delete.cfm?id=${asset.id}" class="btn btn-danger btn-sm" onclick="return confirm('Delete this asset?')">Delete</a>
+                                    </td>
+                                </tr>
+                            `;
+                            tbody.innerHTML += row;
+                        });
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
 </body>
 </html>
