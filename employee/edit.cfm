@@ -15,7 +15,7 @@
         department = form.department,
         email = form.email
     )>
-    <cflocation url="/" addtoken="false">
+    <cflocation url="list.cfm" addtoken="false">
 </cfif>
 
 <!DOCTYPE html>
@@ -83,7 +83,7 @@
             </div>
             
             <button type="submit" name="submit" class="btn btn-primary">Update Employee</button>
-            <a href="/" class="btn btn-secondary">Cancel</a>
+            <a href="list.cfm" class="btn btn-secondary">Cancel</a>
         </form>
     </cfoutput>
 </body>

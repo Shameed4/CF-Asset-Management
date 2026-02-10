@@ -51,8 +51,9 @@
 </head>
 <body>
     <div class="nav">
-        <a href="index.cfm">Employees</a>
-        <a href="list.cfm">Assets</a>
+        <a href="/">Dashboard</a>
+        <a href="/employee/list.cfm">Employees</a>
+        <a href="/asset/list.cfm">Assets</a>
     </div>
 
     <div class="header">
