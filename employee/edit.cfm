@@ -15,7 +15,7 @@
         department = form.department,
         email = form.email
     )>
-    <cflocation url="index.cfm" addtoken="false">
+    <cflocation url="/" addtoken="false">
 </cfif>
 
 <!DOCTYPE html>
