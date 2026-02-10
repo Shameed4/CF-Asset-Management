@@ -37,7 +37,8 @@
                     <td>#department#</td>
                     <td>#email#</td>
                     <td>
-                        <a href="employee-edit.cfm?id=#id#" style="background: ##3498db; color: white; padding: 5px 10px; text-decoration: none; border-radius: 3px;">Edit</a>
+                        <a href="employee-edit.cfm?id=#id#" style="background: ##3498db; color: white; padding: 5px 10px; text-decoration: none; border-radius: 3px; margin-right: 5px;">Edit</a>
+                        <a href="employee-delete.cfm?id=#id#" style="background: ##e74c3c; color: white; padding: 5px 10px; text-decoration: none; border-radius: 3px;" onclick="return confirm('Are you sure you want to delete this employee?')">Delete</a>
                     </td>
                 </tr>
             </cfoutput>
