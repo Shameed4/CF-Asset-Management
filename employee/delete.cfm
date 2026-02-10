@@ -4,4 +4,4 @@
 
 <cfset employeeModel.delete(url.id)>
 
-<cflocation url="index.cfm" addtoken="false">
+<cflocation url="/" addtoken="false">

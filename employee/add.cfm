@@ -73,7 +73,7 @@
         </div>
         
         <button type="submit" name="submit" class="btn btn-primary">Add Employee</button>
-        <a href="index.cfm" class="btn btn-secondary">Cancel</a>
+        <a href="/" class="btn btn-secondary">Cancel</a>
     </form>
 </body>
 </html>
