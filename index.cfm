@@ -26,6 +26,7 @@
                 <th>Name</th>
                 <th>Department</th>
                 <th>Email</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -35,6 +36,9 @@
                     <td>#name#</td>
                     <td>#department#</td>
                     <td>#email#</td>
+                    <td>
+                        <a href="employee-edit.cfm?id=#id#" style="background: ##3498db; color: white; padding: 5px 10px; text-decoration: none; border-radius: 3px;">Edit</a>
+                    </td>
                 </tr>
             </cfoutput>
         </tbody>
